@@ -32,4 +32,43 @@ public abstract class EnemyShip {
 		System.out.println(getName() + " attacks and does " + getDamage());
 	}
 
+	public static EnemyShip makeEnemyShip(String newShipType) {
+		EnemyShip newShip = null;
+		if (newShipType.equals("U")) {
+			return new UFOEnemyShip();
+		} else {
+			if (newShipType.equals("R")) {
+				return new RocketEnemyShip();
+			} else {
+				if (newShipType.equals("B")) {
+					return new BigUFOEnemyShip();
+				} else
+					return null;
+			}
+		}
+	}
+}
+
+class BigUFOEnemyShip extends EnemyShip {
+
+	public BigUFOEnemyShip() {
+		setName("Big UFO Enemy Ship");
+		setDamage(40.0);
+	}
+
+}
+
+class RocketEnemyShip extends EnemyShip {
+	public RocketEnemyShip() {
+		setName("Rocket Enemy Ship");
+		setDamage(10.0);
+	}
+}
+
+class UFOEnemyShip extends EnemyShip {
+
+	public UFOEnemyShip() {
+		setName("UFO Enemy Ship");
+		setDamage(20.0);
+	}
 }

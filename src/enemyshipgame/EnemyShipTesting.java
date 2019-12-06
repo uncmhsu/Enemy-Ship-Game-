@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class EnemyShipTesting {
 	public static void main(String[] args) {
-		EnemyShipFactory shipFactory = new EnemyShipFactory();
+		// EnemyShipFactory shipFactory = new EnemyShipFactory();
 
 		EnemyShip theEnemy = null;
 
@@ -15,7 +15,7 @@ public class EnemyShipTesting {
 		if (UserInput.hasNextLine()) {
 			String typeOfShip = UserInput.nextLine();
 
-			theEnemy = shipFactory.makeEnemyShip(typeOfShip);
+			theEnemy = theEnemy.makeEnemyShip(typeOfShip);
 		}
 		if (theEnemy != null) {
 			doStuffEnemy(theEnemy);
